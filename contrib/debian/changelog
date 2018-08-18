@@ -1,5 +1,5 @@
-blackcoin (1.1.2.1) unstable; urgency=low
+hussarscoin (1.1.2.1) unstable; urgency=low
 
-  * Update debian package scripts for use by blackcoin.
+  * Update debian package scripts for use by hussarscoin.
 
- -- Xerxes Rånby <xerxes@gudinna.com>  Mon, 22 December 2014 17:58:43 +0100
+ -- Hussar <hussars-coin@protonmail.com>  Mon, 13 April 2018 21:33:57 +0100
