@@ -5,29 +5,29 @@
 #build/bitcoind::
 #	$(if $(filter nocheck,$(DEB_BUILD_OPTIONS)),,src/test_bitcoin)
 
-DEB_INSTALL_EXAMPLES_blackcoind += debian/examples/*
-DEB_INSTALL_MANPAGES_blackcoind += debian/manpages/*
+DEB_INSTALL_EXAMPLES_hussarscoind += debian/examples/*
+DEB_INSTALL_MANPAGES_hussarscoind += debian/manpages/*
 
 %:
 	dh --with bash-completion $@
 
 override_dh_auto_build:
-	cd src; $(MAKE) -f makefile.unix blackcoind
+	cd src; $(MAKE) -f makefile.unix hussarscoind
 	$(MAKE)
 
 override_dh_auto_clean:
-	if [ -f Makefile ]; then $(MAKE) clean; else rm -rf build/; rm -f blackcoin-qt; fi
+	if [ -f Makefile ]; then $(MAKE) clean; else rm -rf build/; rm -f hussarscoin-qt; fi
 	cd src; $(MAKE) -f makefile.unix clean
 
 override_dh_auto_configure:
-	qmake blackcoin-qt.pro USE_QRCODE=1
+	qmake hussarscoin-qt.pro USE_QRCODE=1
 
 override_dh_auto_test:
-	cd src; $(MAKE) -f makefile.unix test_blackcoin
-	src/test_blackcoin
+	cd src; $(MAKE) -f makefile.unix test_hussarscoin
+	src/test_hussarscoin
 
 # Ensure wrapper is set executable
-binary-post-install/blackcoind:
-	chmod +x $(cdbs_curdestdir)usr/bin/blackcoind
-binary-post-install/blackcoin-qt:
-	chmod +x $(cdbs_curdestdir)usr/bin/blackcoin-qt
+binary-post-install/hussarscoind:
+	chmod +x $(cdbs_curdestdir)usr/bin/hussarscoind
+binary-post-install/hussarscoin-qt:
+	chmod +x $(cdbs_curdestdir)usr/bin/hussarscoin-qt
